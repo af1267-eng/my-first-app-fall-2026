@@ -1,28 +1,49 @@
+# Rock Paper Scissors Game (Command Line)
+
 import random
+
 
 VALID_OPTIONS = ["rock", "paper", "scissors"]
 
-user_choice = input("Please choose one of 'rock', 'paper', or 'scissors': ").lower()
-print(f"USER CHOICE: {user_choice}")
+# ASK USER FOR AN INPUT (R/P/S)
+
+user_choice = input("Please choose one of 'rock', 'paper', or 'scissors': ")
+print("USER:", user_choice)
+
+# VALIDATIONS
 
 if user_choice not in VALID_OPTIONS:
-	print("OOPS, INVALID CHOICE. PLEASE TRY AGAIN.")
-	exit()
+    print("OOPS INVALID INPUT, PLEASE TRY AGAIN")
+    # exit()
+    quit()
+
+# GENERATE RANDOM COMPUTER CHOICE
 
 computer_choice = random.choice(VALID_OPTIONS)
-print(f"COMPUTER CHOICE: {computer_choice}")
+print("COMP:", computer_choice)
 
-if user_choice == computer_choice:
-	print("TIE GAME!")
-elif user_choice == "rock" and computer_choice == "paper":
-	print("COMPUTER WINS!")
-elif user_choice == "rock" and computer_choice == "scissors":
-	print("COMPUTER WINS!")  # Intentional bug for assignment
-elif user_choice == "paper" and computer_choice == "rock":
-	print("USER WINS!")
-elif user_choice == "paper" and computer_choice == "scissors":
-	print("COMPUTER WINS!")
-elif user_choice == "scissors" and computer_choice == "rock":
-	print("COMPUTER WINS!")
-elif user_choice == "scissors" and computer_choice == "paper":
-	print("USER WINS!")
+# DETERMINE THE WINNER
+
+# quick alias to facilitate some copy and pasting 
+# we will soon move this into a function anyway
+u = user_choice
+c = computer_choice
+
+if u == "rock" and c == "rock":
+    print("TIE GAME")
+elif u == "rock" and c == "paper":
+    print("COMPUTER WINS")
+elif u == "rock" and c == "scissors":  
+    print("USER WINS")
+elif u == "paper" and c == "rock":
+    print("COMPUTER WINS") # OOPS
+elif u == "paper" and c == "paper":
+    print("TIE GAME")
+elif u == "paper" and c == "scissors":
+    print("USER WINS") # OOPS
+elif u == "scissors" and c == "rock":
+    print("COMPUTER WINS")
+elif u == "scissors" and c == "paper":
+    print("USER WINS")
+elif u == "scissors" and c == "scissors":
+    print("TIE GAME")
