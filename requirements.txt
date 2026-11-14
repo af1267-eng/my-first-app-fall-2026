@@ -1,2 +1,13 @@
+
+
+
+# We will use pytest to test our program
+
 pytest
-python-dotenv
+
+
+
+# you might need these for later
+# pandas
+
+# plotly
