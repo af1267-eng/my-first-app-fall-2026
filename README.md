@@ -65,7 +65,7 @@ To run the web app:
 flask run
 
 # Mac OS:
-# FLASK_APP=web_app flask run
+ FLASK_APP=web_app flask run
 
 # Windows OS:
 # ... if `export` doesn't work for you, try `set` instead
