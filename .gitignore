@@ -7,3 +7,4 @@
 
 __pycache__/
 .pytest_cache/
+ALPHAVANTAGE_API_KEY="YOUR_ACTUAL_API_KEY"
